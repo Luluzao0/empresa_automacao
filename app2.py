@@ -4,7 +4,7 @@ import pywhatkit as pwk
 import time
 
 st.title("EMPRESA X mensagens para compartilhar")
-
+st.subheader('Developed by LuisaoDev', divider='grey')
 # Função para enviar mensagem via WhatsApp
 def enviar_mensagem(telefone, mensagem):
     try:
