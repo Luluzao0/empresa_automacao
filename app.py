@@ -3,9 +3,12 @@ import pandas as pd
 import pywhatkit as pwk
 import time
 import os
+import subprocess
 
-# Configurar variável de ambiente DISPLAY
-os.environ["DISPLAY"] = "dummy_value"
+# Iniciar Xvfb
+if os.name != 'nt':  # Verifica se não está em Windows
+    subprocess.run(['Xvfb', ':99', '-screen', '0', '1024x768x16', '&'])
+    os.environ['DISPLAY'] = ':99'
 
 st.title("EMPRESA X mensagens para compartilhar")
 st.subheader('Developed by LuisaoDev')
