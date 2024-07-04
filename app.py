@@ -1,15 +1,16 @@
 import streamlit as st
 import pandas as pd
-import pywhatkit as pwk
-import time
 import os
+import time
 
 # Verificar se não está no Windows e usar Xvfb
-if os.name != 'nt':  # Se não for Windows
+if os.name != 'nt':  
     from xvfbwrapper import Xvfb
     vdisplay = Xvfb()
     vdisplay.start()
-    os.environ['DISPLAY'] = ':99'
+    os.environ['DISPLAY'] = ':99.0'
+
+import pywhatkit as pwk
 
 st.title("EMPRESA X mensagens para compartilhar")
 st.subheader('Developed by LuisaoDev')
