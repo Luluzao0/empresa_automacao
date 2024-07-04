@@ -1,3 +1,5 @@
 streamlit
 pandas
 pywhatkit
+pywin32
+openpyxl

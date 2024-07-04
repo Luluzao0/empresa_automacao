@@ -1,18 +1,10 @@
 import streamlit as st
 import pandas as pd
-import os
 import time
-
-# Verificar se não está no Windows e usar Xvfb
-if os.name != 'nt':  # Se não for Windows
-    os.system('apt-get update && apt-get install -y xvfb')
-    os.system('Xvfb :99 -screen 0 1024x768x16 &')
-    os.environ['DISPLAY'] = ':99'
-
 import pywhatkit as pwk
 
-st.title("EMPRESA X mensagens para compartilhar")
-st.subheader('Developed by LuisaoDev')
+st.title("Envio de mensagens para Empresas")
+st.subheader('Developed by LuisaoDev ')
 
 # Função para enviar mensagem via WhatsApp
 def enviar_mensagem(telefone, mensagem):
