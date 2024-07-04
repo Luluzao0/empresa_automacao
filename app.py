@@ -5,10 +5,9 @@ import time
 
 # Verificar se não está no Windows e usar Xvfb
 if os.name != 'nt':  # Se não for Windows
-    from xvfbwrapper import Xvfb
-    vdisplay = Xvfb()
-    vdisplay.start()
-    os.environ['DISPLAY'] = ':99.0'
+    os.system('apt-get update && apt-get install -y xvfb')
+    os.system('Xvfb :99 -screen 0 1024x768x16 &')
+    os.environ['DISPLAY'] = ':99'
 
 import pywhatkit as pwk
 
