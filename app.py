@@ -3,11 +3,12 @@ import pandas as pd
 import pywhatkit as pwk
 import time
 import os
-import subprocess
 
-# Iniciar Xvfb
-if os.name != 'nt':  # Verifica se não está em Windows
-    subprocess.run(['Xvfb', ':99', '-screen', '0', '1024x768x16', '&'])
+# Verificar se não está no Windows e usar Xvfb
+if os.name != 'nt':  # Se não for Windows
+    from xvfbwrapper import Xvfb
+    vdisplay = Xvfb()
+    vdisplay.start()
     os.environ['DISPLAY'] = ':99'
 
 st.title("EMPRESA X mensagens para compartilhar")
