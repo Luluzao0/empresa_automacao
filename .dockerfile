@@ -4,13 +4,12 @@ FROM python:3.11
 COPY requirements.txt /app/requirements.txt
 RUN pip install -r /app/requirements.txt
 
-# Copiar e executar o script de instalação
+# Copiar o script de configuração e o código da aplicação
 COPY setup.sh /app/setup.sh
-RUN chmod +x /app/setup.sh
-RUN /app/setup.sh
-
-# Copiar código da aplicação
 COPY . /app
 
-# Executar o aplicativo
-CMD ["streamlit", "run", "/app/app.py"]
+# Dar permissão de execução ao script
+RUN chmod +x /app/setup.sh
+
+# Executar o script de configuração
+CMD ["/bin/bash", "/app/setup.sh"]
