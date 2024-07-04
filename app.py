@@ -2,9 +2,14 @@ import streamlit as st
 import pandas as pd
 import pywhatkit as pwk
 import time
+import os
+
+# Configurar variável de ambiente DISPLAY
+os.environ["DISPLAY"] = "dummy_value"
 
 st.title("EMPRESA X mensagens para compartilhar")
-st.subheader('Developed by LuisaoDev', divider='grey')
+st.subheader('Developed by LuisaoDev')
+
 # Função para enviar mensagem via WhatsApp
 def enviar_mensagem(telefone, mensagem):
     try:
